@@ -6,13 +6,19 @@ type ButtonProps = {
   className?: string
 } & ComponentProps<"button">
 
-export function Button({ variant = "default", size = "default", className = "", ...props }: ButtonProps) {
+export function Button({
+  variant = "default",
+  size = "default",
+  className = "",
+  ...props
+}: ButtonProps) {
   const baseStyles =
     "inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none"
 
   const variantStyles = {
     default: "bg-sky-600 text-white hover:bg-sky-700",
-    outline: "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground",
+    outline:
+      "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground",
     ghost: "hover:bg-accent hover:text-accent-foreground",
   }
 
@@ -31,4 +37,3 @@ export function Button({ variant = "default", size = "default", className = "", 
     </button>
   )
 }
-

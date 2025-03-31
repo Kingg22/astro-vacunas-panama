@@ -11,4 +11,3 @@ export function Table(props: TableProps) {
     </div>
   )
 }
-

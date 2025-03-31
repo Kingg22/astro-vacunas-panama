@@ -1,148 +1,141 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import { Button } from '../components/ui/Button';
-import { Input } from '../components/ui/Input';
-import { Label } from '../components/ui/Label';
-import { Card } from '../components/ui/Card';
-import { Select } from '../components/ui/Select';
+import { Button } from "../components/ui/Button"
+import { Card } from "../components/ui/Card"
+import { Input } from "../components/ui/Input"
+import { Label } from "../components/ui/Label"
+import { Select } from "../components/ui/Select"
+import MainLayout from "../layouts/MainLayout.astro"
 ---
 
 <MainLayout title="Registro - Sistema de Vacunación de Panamá">
-  <main class="container mx-auto py-12 px-4">
-    <div class="flex justify-center items-center min-h-[70vh]">
-      <Card className="w-full max-w-lg border-0 shadow-lg">
-        <div class="bg-gradient-to-r from-sky-500 to-emerald-400 text-white rounded-t-lg p-6">
-          <h1 class="text-2xl font-bold">Crear Cuenta</h1>
-          <p class="text-sky-50">
-            Regístrate para acceder al sistema de vacunación
-          </p>
+    <main class="container mx-auto py-12 px-4">
+        <div class="flex justify-center items-center min-h-[70vh]">
+            <Card className="w-full max-w-lg border-0 shadow-lg">
+                <div class="bg-gradient-to-r from-sky-500 to-emerald-400 text-white rounded-t-lg p-6">
+                    <h1 class="text-2xl font-bold">Crear Cuenta</h1>
+                    <p class="text-sky-50">
+                        Regístrate para acceder al sistema de vacunación
+                    </p>
+                </div>
+                <div class="p-6">
+                    <form id="register-form">
+                        <div class="grid gap-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="grid gap-2">
+                                    <Label htmlFor="firstName">Nombre</Label>
+                                    <Input id="firstName"
+                                           placeholder="Juan"
+                                           required
+                                    />
+                                </div>
+                                <div class="grid gap-2">
+                                    <Label htmlFor="lastName">Apellido</Label>
+                                    <Input id="lastName"
+                                           placeholder="Pérez"
+                                           required
+                                    />
+                                </div>
+                            </div>
+                            <div class="grid gap-2">
+                                <Label htmlFor="cedula">Cédula</Label>
+                                <Input id="cedula"
+                                       placeholder="X-XXX-XXXX"
+                                       required
+                                />
+                            </div>
+                            <div class="grid gap-2">
+                                <Label htmlFor="email">Correo electrónico</Label>
+                                <Input id="email"
+                                       type="email"
+                                       placeholder="nombre@ejemplo.com"
+                                       required
+                                />
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="grid gap-2">
+                                    <Label htmlFor="password">Contraseña</Label>
+                                    <Input id="password"
+                                           type="password"
+                                           placeholder="••••••••"
+                                           required
+                                    />
+                                </div>
+                                <div class="grid gap-2">
+                                    <Label htmlFor="confirmPassword">Confirmar contraseña</Label>
+                                    <Input id="confirmPassword"
+                                           type="password"
+                                           placeholder="••••••••"
+                                           required
+                                    />
+                                </div>
+                            </div>
+                            <div class="grid gap-2">
+                                <Label htmlFor="province">Provincia</Label>
+                                <Select id="province">
+                                    <option value="" disabled selected>Selecciona una provincia</option>
+                                    <option value="panama">Panamá</option>
+                                    <option value="colon">Colón</option>
+                                    <option value="chiriqui">Chiriquí</option>
+                                    <option value="bocas">Bocas del Toro</option>
+                                    <option value="veraguas">Veraguas</option>
+                                    <option value="cocle">Coclé</option>
+                                    <option value="herrera">Herrera</option>
+                                    <option value="los-santos">Los Santos</option>
+                                    <option value="darien">Darién</option>
+                                    <option value="panama-oeste">Panamá Oeste</option>
+                                </Select>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-2">
+                                Al registrarte, aceptas nuestros{" "}
+                                <a href="/terms" class="text-sky-600 hover:underline">
+                                    Términos y Condiciones
+                                </a>{" "}
+                                y{" "}
+                                <a href="/privacy" class="text-sky-600 hover:underline">
+                                    Política de Privacidad
+                                </a>
+                                .
+                            </div>
+                            <Button
+                                    type="submit"
+                                    className="bg-emerald-600 hover:bg-emerald-700 w-full"
+                                    id="register-button"
+                            >
+                                Crear Cuenta
+                            </Button>
+                        </div>
+                    </form>
+                </div>
+                <div class="px-6 pb-6">
+                    <div class="text-sm text-center text-gray-500">
+                        ¿Ya tienes una cuenta?{" "}
+                        <a href="/login" class="text-sky-600 hover:underline">
+                            Inicia sesión
+                        </a>
+                    </div>
+                </div>
+            </Card>
         </div>
-        <div class="p-6">
-          <form id="register-form">
-            <div class="grid gap-4">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="grid gap-2">
-                  <Label htmlFor="firstName">Nombre</Label>
-                  <Input
-                    id="firstName"
-                    placeholder="Juan"
-                    required
-                  />
-                </div>
-                <div class="grid gap-2">
-                  <Label htmlFor="lastName">Apellido</Label>
-                  <Input
-                    id="lastName"
-                    placeholder="Pérez"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="grid gap-2">
-                <Label htmlFor="cedula">Cédula</Label>
-                <Input
-                  id="cedula"
-                  placeholder="X-XXX-XXXX"
-                  required
-                />
-              </div>
-              <div class="grid gap-2">
-                <Label htmlFor="email">Correo electrónico</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="nombre@ejemplo.com"
-                  required
-                />
-              </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="grid gap-2">
-                  <Label htmlFor="password">Contraseña</Label>
-                  <Input
-                    id="password"
-                    type="password"
-                    placeholder="••••••••"
-                    required
-                  />
-                </div>
-                <div class="grid gap-2">
-                  <Label htmlFor="confirmPassword">Confirmar contraseña</Label>
-                  <Input
-                    id="confirmPassword"
-                    type="password"
-                    placeholder="••••••••"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="grid gap-2">
-                <Label htmlFor="province">Provincia</Label>
-                <Select id="province">
-                  <option value="" disabled selected>Selecciona una provincia</option>
-                  <option value="panama">Panamá</option>
-                  <option value="colon">Colón</option>
-                  <option value="chiriqui">Chiriquí</option>
-                  <option value="bocas">Bocas del Toro</option>
-                  <option value="veraguas">Veraguas</option>
-                  <option value="cocle">Coclé</option>
-                  <option value="herrera">Herrera</option>
-                  <option value="los-santos">Los Santos</option>
-                  <option value="darien">Darién</option>
-                  <option value="panama-oeste">Panamá Oeste</option>
-                </Select>
-              </div>
-              <div class="text-sm text-gray-500 mt-2">
-                Al registrarte, aceptas nuestros{" "}
-                <a href="/terms" class="text-sky-600 hover:underline">
-                  Términos y Condiciones
-                </a>{" "}
-                y{" "}
-                <a href="/privacy" class="text-sky-600 hover:underline">
-                  Política de Privacidad
-                </a>
-                .
-              </div>
-              <Button 
-                type="submit" 
-                className="bg-emerald-600 hover:bg-emerald-700 w-full"
-                id="register-button"
-              >
-                Crear Cuenta
-              </Button>
-            </div>
-          </form>
-        </div>
-        <div class="px-6 pb-6">
-          <div class="text-sm text-center text-gray-500">
-            ¿Ya tienes una cuenta?{" "}
-            <a href="/login" class="text-sky-600 hover:underline">
-              Inicia sesión
-            </a>
-          </div>
-        </div>
-      </Card>
-    </div>
-  </main>
+    </main>
 </MainLayout>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('register-form');
-    const button = document.getElementById('register-button');
-    
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      if (button) {
-        button.setAttribute('disabled', 'true');
-        button.textContent = 'Procesando...';
-      }
-      
-      // Simulación de registro
-      setTimeout(() => {
-        window.location.href = '/dashboard';
-      }, 1500);
-    });
-  });
-</script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('register-form');
+        const button = document.getElementById('register-button');
 
+        form?.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (button) {
+                button.setAttribute('disabled', 'true');
+                button.textContent = 'Procesando...';
+            }
+
+            // TODO change to register api
+            setTimeout(() => {
+                window.location.href = '/dashboard';
+            }, 1500);
+        });
+    });
+</script>
