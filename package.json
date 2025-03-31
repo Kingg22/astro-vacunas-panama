@@ -1,8 +1,13 @@
 {
+  "name": "astro-vacunas-panama",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.2",
@@ -21,6 +26,7 @@
     "@types/node": "^22.13.14",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
+    "husky": "^9.1.7",
     "typescript": "^5.8.2"
   }
 }
