@@ -1,0 +1,95 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Button } from '../components/ui/Button';
+import { Input } from '../components/ui/Input';
+import { Label } from '../components/ui/Label';
+import { Card } from '../components/ui/Card';
+import { Checkbox } from '../components/ui/Checkbox';
+---
+
+<MainLayout title="Iniciar Sesión - Sistema de Vacunación de Panamá">
+  <main class="container mx-auto py-12 px-4">
+    <div class="flex justify-center items-center min-h-[70vh]">
+      <Card className="w-full max-w-md border-0 shadow-lg">
+        <div class="bg-gradient-to-r from-sky-500 to-emerald-400 text-white rounded-t-lg p-6">
+          <h1 class="text-2xl font-bold">Iniciar Sesión</h1>
+          <p class="text-sky-50">
+            Accede a tu cuenta para ver tu historial de vacunación
+          </p>
+        </div>
+        <div class="p-6">
+          <form id="login-form">
+            <div class="grid gap-4">
+              <div class="grid gap-2">
+                <Label htmlFor="email">Correo electrónico</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="nombre@ejemplo.com"
+                  required
+                />
+              </div>
+              <div class="grid gap-2">
+                <div class="flex items-center justify-between">
+                  <Label htmlFor="password">Contraseña</Label>
+                  <a href="/forgot-password" class="text-sm text-sky-600 hover:underline">
+                    ¿Olvidaste tu contraseña?
+                  </a>
+                </div>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+              <div class="flex items-center space-x-2">
+                <Checkbox id="remember" />
+                <Label htmlFor="remember" className="text-sm font-normal">
+                  Recordar mi sesión
+                </Label>
+              </div>
+              <Button 
+                type="submit" 
+                className="bg-sky-600 hover:bg-sky-700 w-full"
+                id="login-button"
+              >
+                Iniciar Sesión
+              </Button>
+            </div>
+          </form>
+        </div>
+        <div class="px-6 pb-6">
+          <div class="text-sm text-center text-gray-500">
+            ¿No tienes una cuenta?{" "}
+            <a href="/register" class="text-sky-600 hover:underline">
+              Regístrate aquí
+            </a>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </main>
+</MainLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('login-form');
+    const button = document.getElementById('login-button');
+    
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      if (button) {
+        button.setAttribute('disabled', 'true');
+        button.textContent = 'Iniciando sesión...';
+      }
+      
+      // Simulación de inicio de sesión
+      setTimeout(() => {
+        window.location.href = '/dashboard';
+      }, 1500);
+    });
+  });
+</script>
+

@@ -1,0 +1,83 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import VaccinationHero from '../components/VaccinationHero.astro';
+import Features from '../components/Features.astro';
+import { Button } from '../components/ui/Button';
+import { Card } from '../components/ui/Card';
+---
+
+<MainLayout title="Sistema de Vacunación de Panamá">
+  <main>
+    <VaccinationHero />
+    <Features />
+    <section class="py-12 px-4 md:py-24">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6 text-sky-800">Accede a tu información de vacunación</h2>
+        <p class="text-lg mb-8 text-gray-600 max-w-2xl mx-auto">
+          Mantén un registro actualizado de tus vacunas y accede a tu historial completo en cualquier momento.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/login">
+            <Button className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-6 text-lg">
+              Iniciar Sesión
+            </Button>
+          </a>
+          <a href="/register">
+            <Button variant="outline" className="border-emerald-500 text-emerald-600 hover:bg-emerald-50 px-8 py-6 text-lg">
+              Registrarse
+            </Button>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="py-12 px-4 bg-sky-50">
+      <div class="container mx-auto">
+        <Card className="border-0 shadow-lg overflow-hidden">
+          <div class="p-0">
+            <div class="grid md:grid-cols-2">
+              <div class="bg-gradient-to-br from-sky-500 to-emerald-400 p-8 text-white">
+                <h3 class="text-2xl font-bold mb-4">¿Por qué vacunarse?</h3>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <span class="mr-2 mt-1">•</span>
+                    <span>Protege tu salud y la de tu familia</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="mr-2 mt-1">•</span>
+                    <span>Previene enfermedades graves</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="mr-2 mt-1">•</span>
+                    <span>Contribuye a la inmunidad colectiva</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="mr-2 mt-1">•</span>
+                    <span>Reduce la propagación de enfermedades</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-4 text-sky-800">Próximas campañas</h3>
+                <div class="space-y-4">
+                  <div class="border-b pb-2">
+                    <p class="font-medium">Vacunación contra la Influenza</p>
+                    <p class="text-sm text-gray-500">1 de mayo - 30 de junio, 2025</p>
+                  </div>
+                  <div class="border-b pb-2">
+                    <p class="font-medium">Refuerzo COVID-19</p>
+                    <p class="text-sm text-gray-500">15 de junio - 15 de agosto, 2025</p>
+                  </div>
+                  <div>
+                    <p class="font-medium">Vacunación Infantil</p>
+                    <p class="text-sm text-gray-500">Todo el año</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </section>
+  </main>
+</MainLayout>
+
