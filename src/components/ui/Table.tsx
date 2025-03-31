@@ -1,6 +1,6 @@
-import type { ComponentProps } from "react"
+import type { ComponentProps } from "react";
 
-type TableProps = ComponentProps<"table">
+type TableProps = ComponentProps<"table">;
 
 export function Table(props: TableProps) {
   return (
@@ -9,5 +9,5 @@ export function Table(props: TableProps) {
         {props.children}
       </table>
     </div>
-  )
+  );
 }

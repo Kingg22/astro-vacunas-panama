@@ -1,77 +1,99 @@
 ---
-import { Button } from "./ui/Button"
+import { Button } from "./ui/Button";
 ---
 
-<section class="relative bg-gradient-to-r from-sky-500 to-emerald-400 py-16 md:py-24 overflow-hidden">
-    <div class="absolute inset-0 z-0 opacity-20">
-        <div class="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute bottom-0 right-0 w-60 h-60 bg-white rounded-full blur-3xl transform translate-x-1/3 translate-y-1/3"></div>
+<section
+  class="relative bg-gradient-to-r from-sky-500 to-emerald-400 py-16 md:py-24 overflow-hidden"
+>
+  <div class="absolute inset-0 z-0 opacity-20">
+    <div
+      class="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"
+    >
     </div>
+    <div
+      class="absolute bottom-0 right-0 w-60 h-60 bg-white rounded-full blur-3xl transform translate-x-1/3 translate-y-1/3"
+    >
+    </div>
+  </div>
 
-    <div class="container mx-auto px-4 relative z-10">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="text-white">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                    Sistema Nacional de Vacunación de Panamá
-                </h1>
-                <p class="text-xl mb-8 text-sky-50">
-                    Mantén un registro actualizado de tus vacunas y protege tu salud y la de tu familia. Accede a tu
-                    historial de vacunación en cualquier momento.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/register">
-                        <Button size="lg" className="bg-sky-700 text-white hover:bg-sky-800">
-                            Registrarse
-                        </Button>
-                    </a>
-                    <a href="/vaccines">
-                        <Button size="lg" variant="outline" className="border-white text-white hover:bg-sky-600">
-                            Ver Vacunas Disponibles
-                        </Button>
-                    </a>
-                </div>
-            </div>
-
-            <div class="relative h-64 md:h-auto">
-                <div class="bg-white p-6 rounded-lg shadow-xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="font-bold text-sky-800 text-xl">Calendario de Vacunación</h3>
-                        <div class="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded">
-                            Actualizado
-                        </div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center border-b pb-2">
-                            <div>
-                                <p class="font-medium text-gray-800">Influenza Estacional</p>
-                                <p class="text-sm text-gray-500">Todas las edades</p>
-                            </div>
-                            <div class="text-sky-600 font-medium">Mayo - Junio</div>
-                        </div>
-                        <div class="flex justify-between items-center border-b pb-2">
-                            <div>
-                                <p class="font-medium text-gray-800">COVID-19 (Refuerzo)</p>
-                                <p class="text-sm text-gray-500">Adultos</p>
-                            </div>
-                            <div class="text-sky-600 font-medium">Junio - Agosto</div>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <p class="font-medium text-gray-800">Vacunación Infantil</p>
-                                <p class="text-sm text-gray-500">0-5 años</p>
-                            </div>
-                            <div class="text-sky-600 font-medium">Todo el año</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="absolute -bottom-4 -right-4 bg-emerald-500 p-4 rounded-lg shadow-lg hidden md:block">
-                    <div class="text-white text-center">
-                        <p class="font-bold text-2xl">+2M</p>
-                        <p class="text-xs">Panameños vacunados</p>
-                    </div>
-                </div>
-            </div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="text-white">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Sistema Nacional de Vacunación de Panamá
+        </h1>
+        <p class="text-xl mb-8 text-sky-50">
+          Mantén un registro actualizado de tus vacunas y protege tu salud y la
+          de tu familia. Accede a tu historial de vacunación en cualquier
+          momento.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/register">
+            <Button
+              className="bg-sky-700 text-white hover:bg-sky-800"
+              size="lg"
+            >
+              Registrarse
+            </Button>
+          </a>
+          <a href="/vaccines">
+            <Button
+              className="border-white text-white hover:bg-sky-600"
+              size="lg"
+              variant="outline"
+            >
+              Ver Vacunas Disponibles
+            </Button>
+          </a>
         </div>
+      </div>
+
+      <div class="relative h-64 md:h-auto">
+        <div class="bg-white p-6 rounded-lg shadow-xl">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-bold text-sky-800 text-xl">
+              Calendario de Vacunación
+            </h3>
+            <div
+              class="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded"
+            >
+              Actualizado
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center border-b pb-2">
+              <div>
+                <p class="font-medium text-gray-800">Influenza Estacional</p>
+                <p class="text-sm text-gray-500">Todas las edades</p>
+              </div>
+              <div class="text-sky-600 font-medium">Mayo - Junio</div>
+            </div>
+            <div class="flex justify-between items-center border-b pb-2">
+              <div>
+                <p class="font-medium text-gray-800">COVID-19 (Refuerzo)</p>
+                <p class="text-sm text-gray-500">Adultos</p>
+              </div>
+              <div class="text-sky-600 font-medium">Junio - Agosto</div>
+            </div>
+            <div class="flex justify-between items-center">
+              <div>
+                <p class="font-medium text-gray-800">Vacunación Infantil</p>
+                <p class="text-sm text-gray-500">0-5 años</p>
+              </div>
+              <div class="text-sky-600 font-medium">Todo el año</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="absolute -bottom-4 -right-4 bg-emerald-500 p-4 rounded-lg shadow-lg hidden md:block"
+        >
+          <div class="text-white text-center">
+            <p class="font-bold text-2xl">+2M</p>
+            <p class="text-xs">Panameños vacunados</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
