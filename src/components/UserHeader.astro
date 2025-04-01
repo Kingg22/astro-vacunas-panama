@@ -45,12 +45,12 @@ import { Button } from "./ui/Button";
             <path d="m22 8-6 4 6 4V8Z"></path>
             <rect height="12" rx="2" width="14" x="2" y="6"></rect>
           </svg>
-          <span class="font-bold text-lg text-sky-800">VacunaPanamá</span>
+          <span class="font-bold text-lg text-sky-800">Vacunas Panamá</span>
         </a>
       </div>
 
       <div class="flex items-center space-x-4">
-        <Button className="relative" size="icon" variant="ghost">
+        <Button className="relative cursor-pointer" size="icon" variant="ghost">
           <svg
             class="h-5 w-5"
             fill="none"
@@ -72,7 +72,10 @@ import { Button } from "./ui/Button";
         </Button>
 
         <div class="relative" id="user-dropdown-container">
-          <button class="flex items-center space-x-2" id="user-dropdown-button">
+          <button
+            class="flex items-center space-x-2 cursor-pointer"
+            id="user-dropdown-button"
+          >
             <div
               class="h-8 w-8 rounded-full bg-sky-500 flex items-center justify-center text-white"
             >
