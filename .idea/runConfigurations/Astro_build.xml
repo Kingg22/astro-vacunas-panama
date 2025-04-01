@@ -1,16 +1,13 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Astro dev" type="js.build_tools.npm">
+  <configuration default="false" name="Astro build" type="js.build_tools.npm">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
-      <script value="dev" />
+      <script value="build" />
     </scripts>
     <node-interpreter value="$USER_HOME$/.bun/bin/bun" />
     <package-manager value="C:\Users\reimo\.bun\bin\bun.exe" />
     <envs />
-    <EXTENSION ID="com.intellij.lang.javascript.buildTools.npm.rc.StartBrowserRunConfigurationExtension">
-      <browser name="37cae5b9-e8b2-4949-9172-aafa37fbc09c" start="true" url="http://localhost:4321" />
-    </EXTENSION>
     <method v="2" />
   </configuration>
 </component>
