@@ -5,6 +5,7 @@ import { Input } from "../components/ui/Input";
 import { Label } from "../components/ui/Label";
 import MainLayout from "../layouts/MainLayout.astro";
 import { Select } from "../components/ui/Select";
+import { url } from "../utils/url";
 ---
 
 <MainLayout title="Registro - Sistema de Vacunación de Panamá">
@@ -85,11 +86,11 @@ import { Select } from "../components/ui/Select";
               </div>
               <div class="text-sm text-gray-500 mt-2">
                 Al registrarte, aceptas nuestros{" "}
-                <a class="text-sky-600 hover:underline" href="/vacunas/terms">
+                <a class="text-sky-600 hover:underline" href={url("/terms")}>
                   Términos y Condiciones
                 </a>{" "}
                 y{" "}
-                <a class="text-sky-600 hover:underline" href="/vacunas/privacy">
+                <a class="text-sky-600 hover:underline" href={url("/privacy")}>
                   Política de Privacidad
                 </a>
                 .
@@ -107,7 +108,7 @@ import { Select } from "../components/ui/Select";
         <div class="px-6 pb-6">
           <div class="text-sm text-center text-gray-500">
             ¿Ya tienes una cuenta?{" "}
-            <a class="text-sky-600 hover:underline" href="/vacunas/login">
+            <a class="text-sky-600 hover:underline" href={url("/login")}>
               Inicia sesión
             </a>
           </div>

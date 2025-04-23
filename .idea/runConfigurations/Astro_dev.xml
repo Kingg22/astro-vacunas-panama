@@ -9,7 +9,7 @@
     <package-manager value="$USER_HOME$\.bun\bin\bun.exe" />
     <envs />
     <EXTENSION ID="com.intellij.lang.javascript.buildTools.npm.rc.StartBrowserRunConfigurationExtension">
-      <browser start="true" url="http://localhost:4321/vacunas" />
+      <browser start="true" url="http://localhost:4321/astro-vacunas-panama" />
     </EXTENSION>
     <method v="2" />
   </configuration>
