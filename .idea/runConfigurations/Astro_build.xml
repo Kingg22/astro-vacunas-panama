@@ -6,7 +6,7 @@
       <script value="build" />
     </scripts>
     <node-interpreter value="$USER_HOME$/.bun/bin/bun" />
-    <package-manager value="C:\Users\reimo\.bun\bin\bun.exe" />
+    <package-manager value="$USER_HOME$\.bun\bin\bun.exe" />
     <envs />
     <method v="2" />
   </configuration>

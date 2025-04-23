@@ -1,11 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Eslind check" type="js.build_tools.npm">
+  <configuration default="false" name="clean" type="js.build_tools.npm" nameIsGenerated="true">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
-      <script value="lint" />
+      <script value="clean" />
     </scripts>
-    <arguments value="--fix" />
     <node-interpreter value="$USER_HOME$/.bun/bin/bun" />
     <package-manager value="$USER_HOME$\.bun\bin\bun.exe" />
     <envs />
