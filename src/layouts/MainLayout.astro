@@ -2,7 +2,8 @@
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
-import { url } from "../utils/url";
+import FavIcon from "../assets/logos/favicon.ico";
+import FavIconSvg from "../assets/logos/favicon.svg";
 
 interface Props {
   title: string;
@@ -16,12 +17,19 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <link href={url("/favicon.svg")} rel="icon" type="image/svg+xml" />
+    <link href="/sitemap-index.xml" rel="sitemap" />
+    <link href={FavIcon} rel="shortcut icon" />
+    <link color="#8D46E7" href={FavIconSvg.src} rel="mask-icon" />
+    <link href={FavIconSvg.src} rel="icon" type="image/svg+xml" />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-gradient-to-b from-sky-50 to-white">
+  <body
+    class="flex flex-col min-h-screen antialiased text-default bg-page tracking-tight bg-gradient-to-b from-sky-50 to-white"
+  >
     <Navbar />
-    <slot />
+    <main class="flex-grow">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
