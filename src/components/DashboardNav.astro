@@ -1,51 +1,52 @@
 ---
 import Icon from "./IconDashboard.astro";
+import { url } from "../utils/url";
 const { pathname } = Astro.url,
   navItems = [
     {
-      href: "/dashboard",
+      href: url("/dashboard"),
       name: "Panel Principal",
       icon: "layout-dashboard",
     },
     {
-      href: "/dashboard/vaccines",
+      href: url("/dashboard/vaccines"),
       name: "Mis Vacunas",
       icon: "syringe",
     },
     {
       name: "Calendario",
-      href: "/dashboard/calendar",
+      href: url("/dashboard/calendar"),
       icon: "calendar",
     },
     {
       name: "Certificados",
-      href: "/dashboard/certificates",
+      href: url("/dashboard/certificates"),
       icon: "file-text",
     },
     {
       name: "Centros de Vacunación",
-      href: "/dashboard/locations",
+      href: url("/dashboard/locations"),
       icon: "map-pin",
     },
     {
       name: "Notificaciones",
-      href: "/dashboard/notifications",
+      href: url("/dashboard/notifications"),
       icon: "bell",
     },
     {
       name: "Configuración",
-      href: "/dashboard/settings",
+      href: url("/dashboard/settings"),
       icon: "settings",
     },
     {
       name: "Ayuda",
-      href: "/dashboard/help",
+      href: url("/dashboard/help"),
       icon: "help-circle",
     },
   ];
 ---
 
-<div class="w-64 bg-white border-r min-h-screen p-4 hidden md:block">
+<div class="w-64 bg-white border-r p-4 hidden md:block overflow-y-auto">
   <div class="space-y-1">
     {
       navItems.map((item) => {
