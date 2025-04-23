@@ -1,5 +1,6 @@
 ---
 import { Button } from "./ui/Button";
+import { base_url, url } from "../utils/url";
 ---
 
 <header class="bg-white border-b">
@@ -7,7 +8,7 @@ import { Button } from "./ui/Button";
     <div class="flex items-center justify-between">
       <div class="flex items-center">
         <button
-          class="mr-4 md:hidden border rounded p-1"
+          class="mr-4 md:hidden border rounded p-1 cursor-pointer"
           id="mobile-menu-button"
         >
           <svg
@@ -29,7 +30,7 @@ import { Button } from "./ui/Button";
           <span class="sr-only">Abrir menú</span>
         </button>
 
-        <a class="flex items-center space-x-2" href="/vacunas">
+        <a class="flex items-center space-x-2" href={base_url}>
           <svg
             class="h-6 w-6 text-sky-600"
             fill="none"
@@ -90,7 +91,7 @@ import { Button } from "./ui/Button";
           >
             <a
               class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              href="/vacunas/dashboard/profile"
+              href={url("/dashboard/profile")}
             >
               <svg
                 class="mr-2 h-4 w-4"
@@ -111,7 +112,7 @@ import { Button } from "./ui/Button";
             </a>
             <a
               class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              href="/vacunas/dashboard/settings"
+              href={url("/dashboard/settings")}
             >
               <svg
                 class="mr-2 h-4 w-4"
@@ -135,7 +136,7 @@ import { Button } from "./ui/Button";
             <div class="border-t border-gray-100 my-1"></div>
             <a
               class="flex items-center px-4 py-2 text-sm text-red-500 hover:bg-gray-100"
-              href="/vacunas/logout"
+              href={url("/logout")}
             >
               <svg
                 class="mr-2 h-4 w-4"
@@ -168,7 +169,7 @@ import { Button } from "./ui/Button";
   >
     <div class="flex flex-col h-full">
       <div class="flex justify-between items-center p-4 border-b">
-        <a class="flex items-center space-x-2" href="/vacunas">
+        <a class="flex items-center space-x-2" href={base_url}>
           <svg
             class="h-6 w-6 text-sky-600"
             fill="none"
@@ -184,9 +185,13 @@ import { Button } from "./ui/Button";
             <path d="m22 8-6 4 6 4V8Z"></path>
             <rect height="12" rx="2" width="14" x="2" y="6"></rect>
           </svg>
-          <span class="font-bold text-lg text-sky-800">VacunaPanamá</span>
+          <span class="font-bold text-lg text-sky-800">Vacunas Panamá</span>
         </a>
-        <button aria-label="Cerrar menú" id="close-menu-button">
+        <button
+          aria-label="Cerrar menú"
+          class="cursor-pointer"
+          id="close-menu-button"
+        >
           <svg
             class="h-6 w-6"
             fill="none"
@@ -208,7 +213,7 @@ import { Button } from "./ui/Button";
         <nav class="space-y-1">
           <a
             class="flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium bg-sky-100 text-sky-700"
-            href="/vacunas/dashboard"
+            href={url("/dashboard")}
           >
             <svg
               class="h-5 w-5"
