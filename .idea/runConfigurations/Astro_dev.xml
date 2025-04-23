@@ -6,10 +6,10 @@
       <script value="dev" />
     </scripts>
     <node-interpreter value="$USER_HOME$/.bun/bin/bun" />
-    <package-manager value="C:\Users\reimo\.bun\bin\bun.exe" />
+    <package-manager value="$USER_HOME$\.bun\bin\bun.exe" />
     <envs />
     <EXTENSION ID="com.intellij.lang.javascript.buildTools.npm.rc.StartBrowserRunConfigurationExtension">
-      <browser name="37cae5b9-e8b2-4949-9172-aafa37fbc09c" start="true" url="http://localhost:4321" />
+      <browser start="true" url="http://localhost:4321/vacunas" />
     </EXTENSION>
     <method v="2" />
   </configuration>
