@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-border: hsl(var(--border));
@@ -160,4 +160,9 @@ body {
   font-feature-settings:
     "rlig" 1,
     "calt" 1;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
