@@ -4,5 +4,8 @@ import tailwind from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://kingg22.github.io",
+  base: "vacunas",
+  trailingSlash: "ignore",
   integrations: [tailwind(), react()],
 });
