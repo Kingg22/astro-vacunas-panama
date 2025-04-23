@@ -1,114 +1,110 @@
 ---
 import { base_url, url } from "../utils/url";
+import LinkedinLogo from "../assets/logos/linkedin.svg";
+import VaccinesLogo from "../assets/logos/HealthiconsSyringeVaccine.svg";
 ---
 
 <footer class="bg-sky-800 text-white">
-  <div class="container mx-auto px-4 py-12">
+  <div class="container mx-auto px-4 py-11">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
         <a class="flex items-center space-x-2 mb-4" href={base_url}>
-          <svg
-            class="h-8 w-8"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M22 8L16 12 22 16V8Z"></path>
-            <rect height="12" rx="2" width="14" x="2" y="6"></rect>
-          </svg>
+          <VaccinesLogo class="h-8 w-8" />
           <span class="font-bold text-xl">Vacunas Panamá</span>
         </a>
+        <p class="text-sky-100 mb-4">
+          Sistema Nacional de Vacunación de Panamá. Mantén tu historial de
+          vacunación actualizado y accede a información importante.
+        </p>
+        <div class="flex space-x-4">
+          {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
+          <a
+            aria-label="LinkedIn"
+            class="text-white hover:text-sky-200"
+            href="#"
+          >
+            <LinkedinLogo class="h-5 w-5" />
+            <span class="sr-only">LinkedIn</span>
+          </a>
+        </div>
       </div>
-      <p class="text-sky-100 mb-4">
-        Sistema Nacional de Vacunación de Panamá. Mantén tu historial de
-        vacunación actualizado y accede a información importante.
+
+      <div>
+        <h3 class="font-semibold text-lg mb-4">Enlaces Rápidos</h3>
+        <ul class="space-y-2">
+          <li>
+            <a class="text-sky-100 hover:text-white" href={base_url}>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a class="text-sky-100 hover:text-white" href={url("/about")}>
+              Sobre Nosotros
+            </a>
+          </li>
+          <li>
+            <a class="text-sky-100 hover:text-white" href={url("/vaccines")}>
+              Vacunas
+            </a>
+          </li>
+          <li>
+            <a class="text-sky-100 hover:text-white" href={url("/locations")}>
+              Centros de Vacunación
+            </a>
+          </li>
+          <li>
+            <a class="text-sky-100 hover:text-white" href={url("/faq")}>
+              Preguntas Frecuentes
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-lg mb-4">Información</h3>
+        <ul class="space-y-2">
+          <li>
+            <a class="text-sky-100 hover:text-white" href={url("/terms")}>
+              Términos y Condiciones
+            </a>
+          </li>
+          <li>
+            <a class="text-sky-100 hover:text-white" href={url("/privacy")}>
+              Política de Privacidad
+            </a>
+          </li>
+          <li>
+            <a class="text-sky-100 hover:text-white" href={url("/help")}>
+              Centro de Ayuda
+            </a>
+          </li>
+          <li>
+            <a class="text-sky-100 hover:text-white" href={url("/contact")}>
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-lg mb-4">Contacto</h3>
+        <address class="not-italic text-sky-100">
+          <p>Ministerio de Salud</p>
+          <p>Ancón, Avenida Gorgas</p>
+          <p>Edificio 265, Panamá</p>
+          <p class="mt-2">Teléfono: (507) 512-9100</p>
+          <p class="mt-2">
+            Email personal: rey.acosta@utp.ac.pa & patrick.villarroel@utp.ac.pa
+          </p>
+        </address>
+      </div>
+    </div>
+
+    <div class="border-t border-sky-700 mt-8 pt-8 text-center text-sky-200">
+      <p>
+        &copy; {new Date().getFullYear()} Rey Acosta & Patrick Villarroel. Todos
+        los derechos reservados.
       </p>
-      <div class="flex space-x-4">
-        {/* eslint-disable-next-line astro/jsx-a11y/anchor-is-valid */}
-        <a aria-label="LinkedIn" class="text-white hover:text-sky-200" href="#">
-          <img alt="LinkedIn" class="h-5 w-5" src={url("/linkedin.svg")} />
-          <span class="text-sm group-hover:underline">LinkedIn</span>
-        </a>
-      </div>
     </div>
-
-    <div>
-      <h3 class="font-semibold text-lg mb-4">Enlaces Rápidos</h3>
-      <ul class="space-y-2">
-        <li>
-          <a class="text-sky-100 hover:text-white" href={base_url}> Inicio </a>
-        </li>
-        <li>
-          <a class="text-sky-100 hover:text-white" href={url("/about")}>
-            Sobre Nosotros
-          </a>
-        </li>
-        <li>
-          <a class="text-sky-100 hover:text-white" href={url("/vaccines")}>
-            Vacunas
-          </a>
-        </li>
-        <li>
-          <a class="text-sky-100 hover:text-white" href={url("/locations")}>
-            Centros de Vacunación
-          </a>
-        </li>
-        <li>
-          <a class="text-sky-100 hover:text-white" href={url("/faq")}>
-            Preguntas Frecuentes
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="font-semibold text-lg mb-4">Información</h3>
-      <ul class="space-y-2">
-        <li>
-          <a class="text-sky-100 hover:text-white" href={url("/terms")}>
-            Términos y Condiciones
-          </a>
-        </li>
-        <li>
-          <a class="text-sky-100 hover:text-white" href={url("/privacy")}>
-            Política de Privacidad
-          </a>
-        </li>
-        <li>
-          <a class="text-sky-100 hover:text-white" href={url("/help")}>
-            Centro de Ayuda
-          </a>
-        </li>
-        <li>
-          <a class="text-sky-100 hover:text-white" href={url("/contact")}>
-            Contacto
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="font-semibold text-lg mb-4">Contacto</h3>
-      <address class="not-italic text-sky-100">
-        <p>Ministerio de Salud</p>
-        <p>Ancón, Avenida Gorgas</p>
-        <p>Edificio 265, Panamá</p>
-        <p class="mt-2">Teléfono: (507) 512-9100</p>
-        <p>Email: info@vacunapanama.gob.pa</p>
-      </address>
-    </div>
-  </div>
-
-  <div class="border-t border-sky-700 mt-8 pt-8 text-center text-sky-200">
-    <p>
-      &copy; {new Date().getFullYear()} Rey Acosta & Patrick Villarroel. Todos los
-      derechos reservados.
-    </p>
   </div>
 </footer>
