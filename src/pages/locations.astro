@@ -1,0 +1,35 @@
+---
+import MapCard from "../components/Maps.astro";
+import { Card } from "../components/ui/Card";
+import DashboardLayout from "../layouts/DashboardLayout.astro";
+---
+
+<DashboardLayout title="Panel Principal - Sistema de Vacunación de Panamá">
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold text-sky-800 mb-2">Sedes a nivel nacional</h1>
+  </div>
+
+  <Card className="mb-8">
+    <div class="bg-gradient-to-r from-sky-500 to-emerald-400 text-white p-4">
+      <h2 class="text-xl font-bold">UBICACIÓN DE SEDES</h2>
+    </div>
+    <div class="p-4">
+      <main class="p-4 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card individual -->
+          <MapCard
+            direccion="Avenida Balboa, Panamá"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2786.523174918988!2d-79.51109093814824!3d8.996159266565256!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca9aa48d14ffb%3A0x5a95bd3a4bdd3877!2sPoliclinica%20Dr.Carlos%20N%20Brin%20(San%20Francisco)%2C%20C.%2067%201%2F2%20Este%2C%20Panam%C3%A1%2C%20Provincia%20de%20Panam%C3%A1!5e0!3m2!1ses!2spa!4v1746675053929!5m2!1ses!2spa"
+            titulo="Policlinica"
+          />
+
+          <MapCard
+            direccion="Bethania, Panamá"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.4634135496267!2d-79.52775292433422!3d9.021420991039646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca837663ac9f9%3A0x39a0661d2237619f!2sCaja%20De%20Seguro%20Social%20Bethania!5e0!3m2!1ses!2spa!4v1746674943954!5m2!1ses!2spa"
+            titulo="Sede Waos"
+          />
+        </div>
+      </main>
+    </div>
+  </Card>
+</DashboardLayout>

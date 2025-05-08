@@ -1,0 +1,108 @@
+---
+
+---
+
+<div class="grid gap-4">
+  <!-- Selector de provincia -->
+  <div class="grid gap-2">
+    <label class="text-sm font-medium text-gray-700" for="province"
+      >Provincia</label
+    >
+    <select
+      class="w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+      id="province"
+    >
+      <option disabled selected value="">Selecciona una provincia</option>
+      <option value="panama">Panamá</option>
+      <option value="colon">Colón</option>
+      <option value="chiriqui">Chiriquí</option>
+      <option value="bocas">Bocas del Toro</option>
+      <option value="veraguas">Veraguas</option>
+      <option value="cocle">Coclé</option>
+      <option value="herrera">Herrera</option>
+      <option value="los-santos">Los Santos</option>
+      <option value="darien">Darién</option>
+      <option value="panama-oeste">Panamá Oeste</option>
+    </select>
+  </div>
+
+  <!-- Distrito (oculto inicialmente) -->
+  <div
+    class="gap-2 hidden opacity-0 -translate-y-2 transition-all duration-300"
+    id="districtView"
+  >
+    <label class="text-sm font-medium text-gray-700" for="district"
+      >Distrito</label
+    >
+    <select
+      class="w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+      id="district"
+    >
+      <option disabled selected value="">Selecciona un distrito</option>
+      <option value="panama">Panamá</option>
+      <option value="colon">San Miguelito</option>
+      <option value="chiriqui">Chimán</option>
+      <option value="bocas">Taboga</option>
+      <option value="chepo">Chepo</option>
+      <option value="balboa">Balboa</option>
+    </select>
+  </div>
+
+  <!-- Dirección (oculta inicialmente) -->
+  <div
+    class="gap-2 hidden opacity-0 -translate-y-2 transition-all duration-300"
+    id="cajilla_direccion"
+  >
+    <label class="text-sm font-medium text-gray-700" for="direccion"
+      >Dirección</label
+    >
+    {/* eslint-disable-next-line astro/jsx-a11y/control-has-associated-label */}
+    <input
+      class="w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+      id="direccion"
+      name="direccion"
+      placeholder="Escribe la dirección completa"
+      type="text"
+    />
+  </div>
+
+  <!-- Script para controlar visibilidad con animación -->
+  <script is:inline>
+    if (typeof window !== "undefined") {
+      window.addEventListener("DOMContentLoaded", () => {
+        const province = document.getElementById("province");
+        const district = document.getElementById("districtView");
+        const address = document.getElementById("cajilla_direccion");
+
+        const showElement = (el) => {
+          el.classList.remove("hidden");
+          // Forzar reflow para aplicar transición después de mostrar
+          void el.offsetWidth;
+          el.classList.add("opacity-100", "translate-y-0");
+          el.classList.remove("opacity-0", "-translate-y-2");
+        };
+
+        const hideElement = (el) => {
+          el.classList.remove("opacity-100", "translate-y-0");
+          el.classList.add("opacity-0", "-translate-y-2");
+          setTimeout(() => {
+            el.classList.add("hidden");
+          }, 300); // esperar la duración de la transición
+        };
+
+        if (province && district && address) {
+          province.addEventListener("change", function () {
+            const shouldShow = this.value !== "";
+            if (shouldShow) {
+              showElement(district);
+              showElement(address);
+            } else {
+              hideElement(district);
+              hideElement(address);
+            }
+          });
+        }
+      });
+    }
+  </script>
+</div>
