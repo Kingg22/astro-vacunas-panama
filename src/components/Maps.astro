@@ -1,0 +1,21 @@
+---
+const { titulo, direccion, src } = Astro.props;
+---
+
+<div
+  class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200"
+>
+  <div class="p-4">
+    <h2 class="text-lg font-semibold">{titulo}</h2>
+    <p class="text-sm text-gray-600">{direccion}</p>
+  </div>
+  <iframe
+    allowfullscreen=""
+    height="250"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    src={src}
+    style="border:0;"
+    title={titulo}
+    width="100%"></iframe>
+</div>

@@ -4,8 +4,8 @@ import { Card } from "../components/ui/Card";
 import { Input } from "../components/ui/Input";
 import { Label } from "../components/ui/Label";
 import MainLayout from "../layouts/MainLayout.astro";
-import { Select } from "../components/ui/Select";
 import { url } from "../utils/url";
+import FormDirecciones from "../components/FormDirecciones.astro";
 ---
 
 <MainLayout title="Registro - Sistema de Vacunación de Panamá">
@@ -66,24 +66,12 @@ import { url } from "../utils/url";
                   />
                 </div>
               </div>
-              <div class="grid gap-2">
-                <Label htmlFor="province">Provincia</Label>
-                <Select id="province">
-                  <option disabled selected value=""
-                    >Selecciona una provincia</option
-                  >
-                  <option value="panama">Panamá</option>
-                  <option value="colon">Colón</option>
-                  <option value="chiriqui">Chiriquí</option>
-                  <option value="bocas">Bocas del Toro</option>
-                  <option value="veraguas">Veraguas</option>
-                  <option value="cocle">Coclé</option>
-                  <option value="herrera">Herrera</option>
-                  <option value="los-santos">Los Santos</option>
-                  <option value="darien">Darién</option>
-                  <option value="panama-oeste">Panamá Oeste</option>
-                </Select>
-              </div>
+
+              <!--Componente de direcciones-->
+              <main class="grid gap-2">
+                <FormDirecciones />
+              </main>
+
               <div class="text-sm text-gray-500 mt-2">
                 Al registrarte, aceptas nuestros{" "}
                 <a class="text-sky-600 hover:underline" href={url("/terms")}>
